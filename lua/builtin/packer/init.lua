@@ -100,28 +100,26 @@ return packer.startup(function(use)
   use { "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" }
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
 
-  -- TODO: Add commit tags
-
   -- Smooth scrolling
-  use "karb94/neoscroll.nvim"
+  use { "karb94/neoscroll.nvim", commit = "54c5c419f6ee2b35557b3a6a7d631724234ba97a" }
 
   -- Custom character colour column
-  use "lukas-reineke/virt-column.nvim"
+  use { "lukas-reineke/virt-column.nvim", commit = "36fa3be9cba9195081e934b4f9729021726c5889" }
+
+  -- Todo comments
+  use { "folke/todo-comments.nvim", commit = "c1760010f46992165995aaa52ca967f473a2e8e6" }
+
+  -- Notifications
+  use { "rcarriga/nvim-notify", commit = "b005821516f1f37801a73067afd1cef2dbc4dfe8" }
+
+  -- Context
+  use { "nvim-treesitter/nvim-treesitter-context", commit = "5d0367be7471f50c6b5f8338521b9e851b1d177d" }
 
   -- Keymaps cheatsheet
   use "linty-org/key-menu.nvim"
 
-  -- Context
-  use "romgrk/nvim-treesitter-context"
-
   -- Return to last place
   use "ethanholz/nvim-lastplace"
-
-  -- Todo comments
-  use "folke/todo-comments.nvim"
-
-  -- Notifications
-  use "rcarriga/nvim-notify"
 
   -- Colorscheme
   use "navarasu/onedark.nvim"

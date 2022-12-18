@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEn
   end,
 })
 
--- Use 'q' to quit from common plugins
+-- Use "q" to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
 	callback = function()
@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Quit Neovim when a quit command is received (eg, ZZ)
--- vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
+-- vim.cmd("autocmd BufEnter * ++nested if winnr("$") == 1 && bufname() == "NvimTree_" . tabpagenr() | quit | endif")
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
 	callback = function()
@@ -85,4 +85,25 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 			vim.cmd("IlluminatePauseBuf")
 		end
 	end,
+})
+
+-- Offset bufferline if nvim-tree is visible
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = "*",
+  callback = function()
+    local nvim_tree = require("nvim-tree.view")
+    if nvim_tree.is_visible() then
+      require("bufferline.api").set_offset(31, "")
+    end
+  end
+})
+
+-- Don't offset bufferline if nvim-tree is not visible
+vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+  pattern = "*",
+  callback = function()
+    if vim.fn.expand("<afile>"):match("NvimTree") then
+      require("bufferline.api").set_offset(0)
+    end
+  end
 })

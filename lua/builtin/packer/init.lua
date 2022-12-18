@@ -115,11 +115,11 @@ return packer.startup(function(use)
   -- Context
   use { "nvim-treesitter/nvim-treesitter-context", commit = "5d0367be7471f50c6b5f8338521b9e851b1d177d" }
 
+  -- Return to last place
+  use { "ethanholz/nvim-lastplace", commit = "ecced899435c6bcdd81becb5efc6d5751d0dc4c8" }
+
   -- Keymaps cheatsheet
   use "linty-org/key-menu.nvim"
-
-  -- Return to last place
-  use "ethanholz/nvim-lastplace"
 
   -- Colorscheme
   use "navarasu/onedark.nvim"

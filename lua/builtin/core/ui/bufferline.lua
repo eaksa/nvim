@@ -3,6 +3,28 @@ if not status_ok then
   return
 end
 
+function _CLOSE_BUFFER()
+  -- Write to file if buffer has been modified
+  local bufnr = vim.api.nvim_get_current_buf()
+  if vim.bo[bufnr].modified then
+    vim.cmd("write")
+  end
+
+  -- Get number of listed buffers
+  local buffers = vim.fn.len(vim.fn.getbufinfo({
+    bufloaded = 1,
+    buflisted = 1
+  }))
+
+  -- If only one buffer remaining, quit Neovim
+  if buffers >= 1 then
+    vim.cmd("BufferClose")
+  end
+  if buffers <= 1 then
+    vim.cmd("quit")
+  end
+end
+
 bufferline.setup {
   -- Enable/disable animations
   --animation = true,
@@ -11,7 +33,7 @@ bufferline.setup {
   auto_hide = true,
 
   -- Enable/disable current/total tabpages indicator (top right corner)
-  --tabpages = true,
+  tabpages = false,
 
   -- Enable/disable close button
   --closable = true,

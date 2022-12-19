@@ -1,7 +1,7 @@
 require "builtin.impatient"
 
 require "user.options"
-require "user.keymaps"
+require ("user.keymap").setup({ leader = "<Space>" })
 
 require "builtin.packer"
 

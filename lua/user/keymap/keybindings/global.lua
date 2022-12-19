@@ -55,14 +55,6 @@ M.normal["<leader>"] = {
       }
     },
 
-    ["e"] = {
-      "NvimTree",
-      keygroup = {
-        ["e"] = { ":NvimTreeToggle<CR>", "Toggle" },
-        ["r"] = { ":NvimTreeRefresh<CR>", "Refresh" },
-      }
-    },
-
     ["o"] = {
       "Open",
       keygroup = {
@@ -89,13 +81,10 @@ M.normal["<leader>"] = {
     ["c"] = {
       "Colour scheme",
       keygroup = {
-        ["D"] = { "<cmd>lua _SET_STYLE('dark')<CR>", "Dark" },
-        ["d"] = { "<cmd>lua _SET_STYLE('darker')<CR>", "Darker" },
-        ["J"] = { "<cmd>lua _SET_STYLE('cool')<CR>", "Cool" },
-        ["j"] = { "<cmd>lua _SET_STYLE('deep')<CR>", "Deep" },
-        ["W"] = { "<cmd>lua _SET_STYLE('warm')<CR>", "Warm" },
-        ["w"] = { "<cmd>lua _SET_STYLE('warmer')<CR>", "Warmer" },
-        ["l"] = { "<cmd>lua _SET_STYLE('light')<CR>", "Light" },
+        ["h"] = { "<cmd>lua _SET_STYLE('storm')<CR>", "Storm" },
+        ["j"] = { "<cmd>lua _SET_STYLE('night')<CR>", "Night" },
+        ["k"] = { "<cmd>lua _SET_STYLE('moon')<CR>", "Moon" },
+        ["l"] = { "<cmd>lua _SET_STYLE('day')<CR>", "Day" },
       }
     },
 
@@ -104,6 +93,7 @@ M.normal["<leader>"] = {
       "Comment/uncomment line"
     },
 
+    ["e"] = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
     ["h"] = { "<cmd>nohlsearch<CR>", "Clear highlights" },
   }
 }

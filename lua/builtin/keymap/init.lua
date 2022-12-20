@@ -1,7 +1,7 @@
 local M = {}
 
-local utils = require("user.keymap.utils")
-local keymaps = require("user.keymap.keybindings.global")
+local utils = require("builtin.keymap.utils")
+local keymaps = require("keybinds.global")
 
 local default_config = { leader = "<Space>" }
 

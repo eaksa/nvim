@@ -1,13 +1,14 @@
-require "builtin.impatient"
+require "builtin.init"
 
-require "user.options"
-require ("user.keymap").setup({ leader = "<Space>" })
+require "opts"
+require ("builtin.keymap").setup({ leader = "<Space>" })
 
-require "builtin.packer"
-
-require "user.autocommands"
-require "user.colorscheme"
+require "autocmds"
+require "colourscheme"
 
 require "builtin.core"
+require "builtin.ui"
+require "builtin.autoformat"
+
 require "lsp.core"
 require "lsp.dap"

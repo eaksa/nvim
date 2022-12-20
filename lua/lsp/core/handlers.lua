@@ -52,8 +52,8 @@ M.setup = function()
 end
 
 local function lsp_keymaps(bufnr)
-  local keymaps = require("user.keymap.keybindings.lsp")
-  local map = require("user.keymap.utils")
+  local keymaps = require("keybinds.lsp")
+  local map = require("builtin.keymap.utils")
   for mode, keymap in pairs(keymaps) do
     map.mode_set(mode, keymap, bufnr)
   end

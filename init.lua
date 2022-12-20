@@ -9,5 +9,5 @@ require "user.autocommands"
 require "user.colorscheme"
 
 require "builtin.core"
-require "builtin.lsp"
-require "builtin.dap"
+require "lsp.core"
+require "lsp.dap"

@@ -4,24 +4,18 @@ M.normal = {
   ["<leader>"] = {
     keygroup = {
 
-      ["j"] = {
-        "Jump to",
-        keygroup = {
-          ["D"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
-          ["d"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-          ["I"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
-          ["r"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
-        },
-        opts = { noremap = true, silent = true }
-      },
-
-      ["D"] = {
-        "Diagnostics",
+      ["g"] = {
+        "Actions",
         keygroup = {
           ["a"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions…" },
-          ["l"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show diagnostics" },
-          ["j"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next" },
-          ["k"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Previous" },
+          ["D"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Jump to declaration" },
+          ["d"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Jump to definition" },
+          ["I"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Jump to implementation" },
+          ["i"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Get info" },
+          ["j"] = { "<cmd>lua vim.diagnostic.goto_next({ buffer = 0 })<CR>", "Next" },
+          ["k"] = { "<cmd>lua vim.diagnostic.goto_prev({ buffer = 0 })<CR>", "Previous" },
+          ["l"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Get diagnostics" },
+          ["r"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "Get references" },
         },
         opts = { noremap = true, silent = true }
       },
@@ -29,10 +23,10 @@ M.normal = {
       ["l"] = {
         "Language server",
         keygroup = {
-          ["i"] = { "<cmd>LspInfo<CR>", "Language server info" },
-          ["I"] = { "<cmd>Mason<CR>", "Install language server…" },
+          ["f"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format buffer" },
+          ["i"] = { "<cmd>Mason<CR>", "Install language server…" },
+          ["I"] = { "<cmd>LspInfo<CR>", "Get language server info" },
           ["r"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename all references" },
-          ["f"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format current buffer" },
         },
         opts = { noremap = true, silent = true }
       },
@@ -44,9 +38,11 @@ M.normal = {
       ["D"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Jump to declaration" },
       ["d"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Jump to definition" },
       ["I"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Jump to implementation" },
-      ["r"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "Jump to references" },
-      ["k"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show information" },
-      ["l"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Show diagnostics" },
+      ["i"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Get info" },
+      ["j"] = { "<cmd>lua vim.diagnostic.goto_next({ buffer = 0 })<CR>", "Next" },
+      ["k"] = { "<cmd>lua vim.diagnostic.goto_prev({ buffer = 0 })<CR>", "Previous" },
+      ["l"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Get diagnostics" },
+      ["r"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "Get references" },
     },
       opts = { noremap = true, silent = true }
   },

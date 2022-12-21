@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local default_style = "night"
+local default_style = "moon"
 
 function _SET_STYLE(style)
   if style == "day" then

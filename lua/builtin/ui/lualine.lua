@@ -24,7 +24,7 @@ local file = {
     path = 0,
     shorting_target = 40,
     symbols = {
-      modified = "",
+      modified = " ",
       readonly = "",
       unnamed = "",
     }
@@ -71,23 +71,33 @@ local lsp = {
     "filetype",
     colored = true,
     icon_only = true,
+    separator = { left = " ", right = " " },
+    left_padding = 1,
     cond = function()
-      return bar_is_wide() and get_lsp_client() and not is_insert_mode()
+      return get_lsp_client() and not is_insert_mode()
     end,
   },
   {
     "filetype",
     colored = false,
     icon_only = true,
+    separator = { left = " ", right = " " },
+    left_padding = 1,
     cond = function()
-      return bar_is_wide() and get_lsp_client() and is_insert_mode()
+      return get_lsp_client() and is_insert_mode()
     end,
   },
   {
-    function() return get_lsp_client() or "◍  LSP not found" end,
-    cond = function() return bar_is_wide() end,
+    function() return "" end,
     separator = { left = " ", right = " " },
     left_padding = 1,
+    cond = function() return not get_lsp_client() end,
+  },
+  {
+    function() return get_lsp_client() or "No LSP" end,
+    separator = { left = " ", right = " " },
+    left_padding = 1,
+    cond = function() return bar_is_wide() end,
   },
 }
 
@@ -98,7 +108,7 @@ local theme = {}
 theme.normal = {
   a = { bg = c.green, fg = c.black, gui = "bold" },
   b = { bg = c.fg_gutter, fg = c.fg_sidebar },
-  c = { bg = c.bg_statusline, fg = c.fg_sidebar },
+  c = { bg = c.black, fg = c.fg_sidebar },
 }
 
 theme.insert = {

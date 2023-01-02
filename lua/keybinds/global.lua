@@ -88,11 +88,6 @@ M.normal["<leader>"] = {
       }
     },
 
-    ["/"] = {
-      "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>",
-      "Comment/uncomment line"
-    },
-
     ["e"] = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
     ["h"] = { "<cmd>nohlsearch<CR>", "Clear highlights" },
   }

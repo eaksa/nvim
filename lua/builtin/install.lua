@@ -33,6 +33,7 @@ return {
   [ "ravenxrz/DAPInstall.nvim"                    ] = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" , -- DAP installer
   [ "L3MON4D3/LuaSnip"                            ] = "8f8d493e7836f2697df878ef9c128337cbf2bb84" , -- Snippet engine
   [ "rafamadriz/friendly-snippets"                ] = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" , -- Preconfigured snippet collection for multiple languages
+  [ "simrat39/rust-tools.nvim"                    ] = "99fd1238c6068d0637df30b6cee9a264334015e9" , -- Rust LSP tools
 
   -- ===================================================================================================================================================== --
   -- =====    UI / UX    ================================================================================================================================= --
